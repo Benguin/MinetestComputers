@@ -316,7 +316,7 @@ local function execute_command(pos, player, command, args)
 end
 
 -- Extract positional value back out of formspec hidden fields
-local function fields_to_pos(fields)
+function computer_test.fields_to_pos(fields)
     local pos = nil
     if (fields.posx and fields.posy and fields.posz) then
         pos = {
@@ -521,7 +521,7 @@ end
 
 minetest.register_on_player_receive_fields(
     function (player, formname, fields)
-        local pos = fields_to_pos(fields)
+        local pos = computer_test.fields_to_pos(fields)
         if ( pos == nil or fields.quit) then
             return
         end
@@ -531,11 +531,6 @@ minetest.register_on_player_receive_fields(
         elseif (formname == "computer_test:terminal_edit_screen") then
             receive_terminal_edit_fields(pos, player, formname, fields)
         end
-        
-   
+
     end
 )
-
-
--- 
-

@@ -11,6 +11,7 @@ end
 local files = {
     'core',
     'computer',
+    'debug',
 }
 
 for key, file in ipairs(files) do
